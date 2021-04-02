@@ -50,6 +50,6 @@ describe('Question page', () => {
 
     cy.get('@question-options').first().find('button').click()
 
-    cy.get('@question-options').find('button').should('be.disabled');
+    cy.get('@question-options').find('button').should('not.exist');
   })
 })
