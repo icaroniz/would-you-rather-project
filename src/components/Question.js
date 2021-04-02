@@ -113,7 +113,7 @@ function mapStateToProps({users, authedUser, questions}, props) {
 Question.propTypes = {
   dispatch: PropTypes.func,
   question: PropTypes.object,
-  questionAuthor: PropTypes.string,
+  questionAuthor: PropTypes.object,
   voted: PropTypes.oneOf([0, 1, 2]),
 }
 

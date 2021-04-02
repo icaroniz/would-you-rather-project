@@ -110,7 +110,7 @@ function mapStateToProps({users, authedUser}) {
 App.propTypes = {
   dispatch: PropTypes.func,
   isUserLogged: PropTypes.bool,
-  authedUser: PropTypes.string,
+  authedUser: PropTypes.object,
 }
 
 export default connect(mapStateToProps)(App);
