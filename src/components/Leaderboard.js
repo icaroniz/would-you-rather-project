@@ -47,17 +47,10 @@ const LeaderboardUser = styled.div`
 
 class Leaderboard extends Component {
   compareUsers = (a, b) => {
-    if (Object.keys(a.answers).length > Object.keys(b.answers).length) {
-      return -1;
-    } else if (Object.keys(a.answers).length < Object.keys(b.answers).length) {
-      return 1;
-    } else if (a.questions.length > b.questions.length) {
-      return -1;
-    } else if (a.questions.length < b.questions.length) {
-      return 1;
-    } else {
-      return 0
-    }
+    const aScore = Object.keys(a.answers).length + a.questions.length;
+    const bScore = Object.keys(b.answers).length + b.questions.length;
+
+    return (aScore > bScore) ? -1 : ((aScore < bScore) ? 1 : 0);
   }
 
   getClassName = (index) => {
