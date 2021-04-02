@@ -50,15 +50,13 @@ const NavigationLink = styled(NavLink)`
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitialData())
+    this.props.handleInitialData()
   }
 
   handleLogout = (e) => {
     e.preventDefault()
 
-    const {dispatch} = this.props
-
-    dispatch(unsetAuthedUser())
+    this.props.unsetAuthedUser()
   }
 
   render() {
@@ -113,4 +111,4 @@ App.propTypes = {
   authedUser: PropTypes.object,
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, {handleInitialData, unsetAuthedUser})(App);
